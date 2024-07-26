@@ -1,0 +1,11 @@
+Model Information:
+* title:	V Letter
+* source:	https://sketchfab.com/3d-models/v-letter-dac22aa86230472da94a5545a3d997b3
+* author:	andre.arancibia (https://sketchfab.com/andre.arancibia)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "V Letter" (https://sketchfab.com/3d-models/v-letter-dac22aa86230472da94a5545a3d997b3) by andre.arancibia (https://sketchfab.com/andre.arancibia) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
