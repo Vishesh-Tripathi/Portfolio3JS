@@ -24,21 +24,26 @@ import {
   sb,
   tripguide,
   threejs,
+  gssco,
 } from "../assets";
 
 export const navLinks = [
   {
-    id: "about",
+    id: "#about",
     title: "About",
   },
   {
-    id: "work",
+    id: "#work",
     title: "Work",
   },
   {
-    id: "contact",
+    id: "#contact",
     title: "Contact",
   },
+  {
+    id:"https://drive.google.com/file/d/1cGlC3ShklyHnFxBLCPt3fZKk3btY1uzQ/view?usp=sharing",
+    title:"Resume",
+  }
 ];
 
 const services = [
@@ -116,9 +121,9 @@ const experiences = [
   {
     title: "Contributer GSSOC 24",
     company_name: "Girl Summer Script of Code ",
-    icon: "https://suvraneel.tech/images/work-assets/GSSoC21.png",
+    icon: gssco,
     iconBg: "#383E56",
-    date: "July 2024 - Aug 2024",
+    date: "July 2024 - NOV 2024",
     points: [
       "Contributing in open Source project web applications using React.js and other related technologies.",
       "Working on advanced open source projects to get hands on experience in the real open source world.",
@@ -236,25 +241,37 @@ const projects = [
     source_code_link: "https://github.com/Vishesh-Tripathi/E-Com",
   },
   {
-    name: "Currency-Converter",
+    name: "Task-Manager",
     description:
-      "Developed a real-time currency converter using React .This project leverages the ExchangeRate-API to fetch up-to-date exchange rates, allowing users to convert between multiple currencies seamlessly. Key features include a user-friendly interface, responsive design, and accurate conversion calculations. ",
+      "A task manager with Role-Based Access Control (RBAC) allows users to manage tasks efficiently while ensuring secure access control based on roles and permissions. It streamlines workflows, enhances collaboration, and ensures that only authorized individuals can access or modify specific tasks or data. ",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
-      // {
-      //   name: "restapi",
-      //   color: "green-text-gradient",
-      // },
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      },
       {
         name: "tailwind",
         color: "pink-text-gradient",
       },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "nodejs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "redux",
+        color: "green-text-gradient",
+      }
     ],
     image: jobit,
-    source_code_link: "https://github.com/Vishesh-Tripathi/CurrencyConverter",
+    source_code_link: "https://github.com/Vishesh-Tripathi/Task-Manager-RBAC",
   },
   {
     name: "Hall-E-Mausam",
