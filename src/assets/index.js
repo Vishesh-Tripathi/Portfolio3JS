@@ -31,6 +31,7 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import sb from "./sb.png"
 import gssco from "./gssco.png"
+import tech from "techSrijan.png"
 
 export {
   gssco,
@@ -63,4 +64,5 @@ export {
   carrent,
   jobit,
   tripguide,
+  tech,
 };

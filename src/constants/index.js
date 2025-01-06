@@ -25,6 +25,7 @@ import {
   tripguide,
   threejs,
   gssco,
+  tech
 } from "../assets";
 
 export const navLinks = [
@@ -274,25 +275,25 @@ const projects = [
     source_code_link: "https://github.com/Vishesh-Tripathi/Task-Manager-RBAC",
   },
   {
-    name: "Hall-E-Mausam",
+    name: "TechSrijan Website",
     description:
-      "Weather-APPWeather-APPFeb 2023 - Feb 2023Feb 2023 - Feb 2023Designed to keep you one step ahead of Mother Nature. With real-time updates,detailed forecasts, and stunning visuals, our Webapp is your new go-to for all things weather.Real-Time Weather Updates: Stay informed with accurate weather conditions updated by the minute..",
+      "The official website for TechShrijan, our college's annual technical fest, was developed to create an engaging and seamless experience for participants and visitors. Designed with a modern and dynamic user interface, the website serves as the central hub for all event-related information, registrations, schedules, and announcements.",
     tags: [
       {
         name: "React",
         color: "blue-text-gradient",
       },
-      // {
-      //   name: "Appwrite",
-      //   color: "green-text-gradient",
-      // },
+      {hl
+        name: "JavaScript",
+        color: "green-text-gradient",
+      },
       {
         name: "tailwind",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://vishesh-tripathi.github.io/WeatherAppReact/",
+    image: tech,
+    source_code_link: "https://techsrijan.vercel.app/",
   },
 ];
 
