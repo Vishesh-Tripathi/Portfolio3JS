@@ -283,7 +283,7 @@ const projects = [
         name: "React",
         color: "blue-text-gradient",
       },
-      {hl
+      {
         name: "JavaScript",
         color: "green-text-gradient",
       },
