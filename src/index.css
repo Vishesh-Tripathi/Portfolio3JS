@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles.css or your CSS module */
+.intro-name {
+  color: #FF0000; /* Change to desired color */
+}
 * {
   margin: 0;
   padding: 0;

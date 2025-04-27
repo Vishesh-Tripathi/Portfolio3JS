@@ -7,6 +7,9 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
+// Import your image
+import myImage from "./profile.jpg"; // change path according to your image location
+
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
@@ -43,27 +46,68 @@ const About = () => {
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-      >
-       Hello! I’m Vishesh Tripathi, an aspiring Electronics and Communication Engineer with a passion for technology and innovation. Currently, I’m pursuing my bachelor’s degree, where I’m honing my skills and knowledge in the field of Electronics and Communication Engineering
+      {/* Flex Container */}
+      <div className="mt-10 flex flex-col md:flex-row gap-10 items-center">
+        
+        {/* Left Side - Text */}
+        <motion.div
+          variants={fadeIn("", "", 0.1, 1)}
+          className="flex-1 text-secondary text-[17px] max-w-6xl "
+        >
+          <p>
+            Hello! I’m Vishesh Tripathi, an aspiring Software Engineer with a passion for technology and innovation. Currently, I’m pursuing my Bachelor’s degree , where I am building a strong foundation in both hardware and software systems.
+            <br />
+          </p>
 
-🌐 Technical Skills:
+          <br />
+          <p className="font-semibold">Here are some technologies I’ve been working with:</p>
+          <div className="mt-2 grid grid-cols-2 gap-4">
+            <ul className="list-disc list-inside space-y-2">
+              <li>C/C++</li>
+              <li>JavaScript</li>
+              <li>React.js</li>
+            </ul>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Node.js</li>
+              <li>Redux</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
 
- Languages: C/C++ ,HTML/CSS ,JavaScript 
- Data Structures & Algorithms
- Libraries/Frameworks: React.js ,Redux ,Tailwind CSS ,Bootstrap ,NodeJS ,MongoDB,
- Express
- Developer Tools: Git ,VS Code ,Appwrite ,Firebase
+          <br />
+          {/* <p className="font-semibold">Developer Tools I use frequently:</p>
+          <div className="mt-2 grid grid-cols-2 gap-4">
+            <ul className="list-disc list-inside space-y-2">
+              <li>Git & GitHub</li>
+              <li>VS Code</li>
+            </ul>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Appwrite</li>
+              <li>Firebase</li>
+            </ul>
+          </div> */}
 
-🎯 Goal: I am eager to apply my technical expertise and problem-solving skills in a dynamic work environment, particularly in roles that challenge me to grow and contribute to the success of the organization.
+          {/* <br /> */}
+          <p>
+            Outside of my academic and technical pursuits, I have a passion for traveling, exploring new places, and experiencing different cultures. I’m also interested in following scientific advancements and playing video games during my free time.
+          </p>
+        </motion.div>
 
-Feel free to connect with me to discuss technology, innovation, or opportunities where my skills can make a difference!
+        {/* Right Side - Image */}
+        <motion.div
+          variants={fadeIn("left", "spring", 0.5, 1)}
+          className="flex-1 flex justify-center items-center"
+        >
+          <img
+            src={myImage}
+            alt="Vishesh Tripathi"
+            className="w-[300px] h-[400px] object-cover rounded-2xl border-4 border-[#915EFF]"
+          />
+        </motion.div>
+      </div>
 
-      </motion.p>
-
-      <div className='mt-20 flex flex-wrap gap-10'>
+      {/* Services */}
+      <div className='mt-20 flex flex-wrap gap-10 justify-center'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
