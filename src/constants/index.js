@@ -25,7 +25,8 @@ import {
   tripguide,
   threejs,
   gssco,
-  tech
+  tech,
+  anant
 } from "../assets";
 
 export const navLinks = [
@@ -119,6 +120,20 @@ const technologies = [
 ];
 
 const experiences = [
+  {
+    title: "Web Developer",
+    company_name: "AnantWave",
+    icon: anant, // Replace with appropriate icon variable or import
+    iconBg: "#383E56",
+    date: "Feb 2025 - Present",
+    points: [
+      "Developing and optimizing user-centric web applications using React.js, Node.js, and Tailwind CSS.",
+      "Implementing scalable and maintainable front-end architectures, ensuring seamless UI/UX across devices.",
+      "Collaborating with cross-functional teams to integrate backend services, implement authentication flows, and manage databases using MongoDB and Firebase.",
+      "Writing efficient, reusable, and modular code while following best practices for version control (Git).",
+    ],
+  }
+  ,
   {
     title: "Contributer GSSOC 24",
     company_name: "Girl Summer Script of Code ",

@@ -32,8 +32,10 @@ import tripguide from "./tripguide.png";
 import sb from "./sb.png"
 import gssco from "./gssco.png"
 import tech from "./tc.png"
+import anant from "./anantwave.png"
 
 export {
+  anant,
   gssco,
   sb,
   logo,
