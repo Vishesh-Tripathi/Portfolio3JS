@@ -29,6 +29,30 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Basic validation
+    if (!form.name.trim()) {
+      alert("Please enter your name.");
+      return;
+    }
+    
+    if (!form.email.trim()) {
+      alert("Please enter your email address.");
+      return;
+    }
+    
+    if (!form.message.trim()) {
+      alert("Please enter a message.");
+      return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    
     setLoading(true);
 
     emailjs
@@ -37,7 +61,7 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Vishesh Tripathi",
           from_email: form.email,
           to_email: "tripathiishu467@gmail.com",
           message: form.message,
@@ -47,7 +71,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          alert("Thank you! Your message has been sent successfully. I will get back to you as soon as possible.");
 
           setForm({
             name: "",
@@ -57,9 +81,21 @@ const Contact = () => {
         },
         (error) => {
           setLoading(false);
-          console.error(error);
+          console.error("Email sending failed:", error);
 
-          alert("Ahh, something went wrong. Please try again.");
+          let errorMessage = "Sorry, something went wrong while sending your message. Please try again or contact me directly.";
+          
+          if (error.status === 400) {
+            errorMessage = "There was an issue with the form data. Please check your inputs and try again.";
+          } else if (error.status === 401) {
+            errorMessage = "Authentication failed. The email service configuration needs to be updated.";
+          } else if (error.status === 404) {
+            errorMessage = "Email service or template not found. Please contact the site owner.";
+          } else if (error.status === 422) {
+            errorMessage = "Invalid template parameters. Please contact the site owner.";
+          }
+          
+          alert(errorMessage);
         }
       );
   };

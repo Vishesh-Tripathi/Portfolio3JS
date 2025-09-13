@@ -6,6 +6,7 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import next from "./tech/next.png"
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -33,11 +34,17 @@ import sb from "./sb.png"
 import gssco from "./gssco.png"
 import tech from "./tc.png"
 import anant from "./anantwave.png"
+import riyans from "./riyans.png"
+import trip from "./trip.png"
+import diglib from "./diglib.png"
+import swasth from "./swasth.png"
+import careerprep from "./careerprep.png"
 
 export {
   anant,
   gssco,
   sb,
+  riyans,
   logo,
   backend,
   creator,
@@ -67,4 +74,9 @@ export {
   jobit,
   tripguide,
   tech,
+  next,
+  trip,
+  diglib,
+  swasth,
+  careerprep,
 };
