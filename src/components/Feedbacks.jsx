@@ -6,94 +6,131 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { testimonials } from "../constants";
 
-const FeedbackCard = ({
-  index,
-  link,
-  testimonial,
-  name,
-  designation,
-  company,
-  image,
-}) => (
-  <motion.div
-    variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className='bg-tertiary p-5 rounded-2xl xs:w-[320px] w-full hover:bg-black-200 transition-all duration-300 group cursor-pointer'
-    onClick={() => window.open(link, "_blank")}
-  >
-    <div className='relative w-full h-[200px] mb-5'>
-      <div className='absolute inset-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-300'></div>
-      <div className='relative bg-tertiary m-1 rounded-xl h-full flex items-center justify-center'>
-        <img
-          src={image}
-          alt={`${name} profile`}
-          className='w-16 h-16 object-contain filter group-hover:scale-110 transition-transform duration-300'
-        />
-      </div>
-    </div>
+const platformAccent = {
+  Github:   { from: "#6e40c9", to: "#915EFF", shadow: "#915EFF" },
+  Linkedin: { from: "#0077b5", to: "#00a0dc", shadow: "#0077b5" },
+  Codolio:  { from: "#00cea8", to: "#00f5c8", shadow: "#00cea8" },
+};
 
-    <div className='mt-5'>
-      <h3 className='text-white font-bold text-[20px] group-hover:text-[#915EFF] transition-colors duration-300'>
-        {name}
-      </h3>
-      {designation && (
-        <p className='mt-2 text-secondary text-[14px]'>
-          {designation} {company && `at ${company}`}
-        </p>
-      )}
-      
-      <div className='mt-4 flex items-center justify-between'>
-        <span className='text-[#915EFF] text-[14px] font-medium group-hover:text-white transition-colors duration-300'>
-          Visit Profile →
-        </span>
-        <div className='w-8 h-8 rounded-full bg-black-200 flex items-center justify-center group-hover:bg-[#915EFF] transition-colors duration-300'>
-          <svg
-            className='w-4 h-4 text-white'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
-            xmlns='http://www.w3.org/2000/svg'
+const FeedbackCard = ({ index, link, name, designation, company, image }) => {
+  const accent = platformAccent[name] ?? { from: "#915EFF", to: "#00cea8", shadow: "#915EFF" };
+
+  return (
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.15, 0.6)}
+      whileHover={{ y: -8, scale: 1.03 }}
+      onClick={() => window.open(link, "_blank")}
+      className="group relative cursor-pointer rounded-2xl overflow-hidden w-[260px]"
+      style={{
+        background: "linear-gradient(145deg, #1d1836, #13102a)",
+        border: "1px solid rgba(145,94,255,0.2)",
+        boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
+        transition: "box-shadow 0.3s, border-color 0.3s",
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = `${accent.shadow}66`;
+        e.currentTarget.style.boxShadow = `0 8px 32px ${accent.shadow}33`;
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = "rgba(145,94,255,0.2)";
+        e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.3)";
+      }}
+    >
+      {/* Top accent bar */}
+      <div
+        className="h-[3px] w-full"
+        style={{ background: `linear-gradient(to right, ${accent.from}, ${accent.to})` }}
+      />
+
+      {/* Card body */}
+      <div className="flex flex-col items-center gap-4 p-7">
+        {/* Icon glow ring */}
+        <div className="relative">
+          <div
+            className="absolute inset-0 rounded-full blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-300"
+            style={{ background: `radial-gradient(circle, ${accent.from}, transparent)` }}
+          />
+          <div
+            className="relative w-20 h-20 rounded-full flex items-center justify-center border-2"
+            style={{
+              borderColor: `${accent.shadow}44`,
+              background: `linear-gradient(135deg, ${accent.from}22, ${accent.to}11)`,
+            }}
           >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-              d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+            <img
+              src={image}
+              alt={name}
+              className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
             />
+          </div>
+        </div>
+
+        {/* Name */}
+        <h3 className="text-white font-bold text-[18px] tracking-wide group-hover:text-[#b490ff] transition-colors duration-300">
+          {name}
+        </h3>
+
+        {/* Designation / company */}
+        {designation && (
+          <p className="text-[#aaa6c3] text-[13px] text-center">
+            {designation}{company && ` · ${company}`}
+          </p>
+        )}
+
+        {/* Divider */}
+        <div
+          className="w-full h-px opacity-30"
+          style={{ background: `linear-gradient(to right, transparent, ${accent.shadow}, transparent)` }}
+        />
+
+        {/* CTA */}
+        <div className="flex items-center gap-2 text-[13px] font-semibold transition-colors duration-300"
+          style={{ color: accent.to }}
+        >
+          Visit Profile
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+            className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200">
+            <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       </div>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 const Feedbacks = () => {
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
-      <div
-        className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
+    <>
+      <motion.div variants={textVariant()} className="text-center">
+        <p className={`${styles.sectionSubText}`}>Let&apos;s connect</p>
+        <h2 className={`${styles.sectionHeadText} bg-gradient-to-r from-white to-[#915EFF] bg-clip-text text-transparent`}>
+          Social Profiles.
+        </h2>
+        <div className="w-20 h-1 bg-gradient-to-r from-[#915EFF] to-[#00cea8] mx-auto mt-4 rounded-full" />
+      </motion.div>
+
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className="mt-6 text-[#aaa6c3] text-[16px] max-w-2xl mx-auto leading-[28px] text-center"
       >
-        <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>Connect with me</p>
-          <h2 className={styles.sectionHeadText}>Social Profiles.</h2>
-        </motion.div>
-        
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className='mt-4 mb-16 text-secondary text-[17px] max-w-3xl leading-[30px]'
-        >
-          Follow my journey and connect with me on various platforms. From coding repositories 
-          to professional networking, you can find my work and stay updated with my latest projects 
-          and achievements across these platforms.
-        </motion.p>
+        Follow my journey and connect across platforms — from code repositories
+        to professional networking and DSA .
+      </motion.p>
+
+      {/* Background glows */}
+      <div className="relative mt-16">
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#915EFF]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-[#00cea8]/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="flex flex-wrap justify-center gap-8 relative z-10">
+          {testimonials.map((testimonial, index) => (
+            <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
+          ))}
+        </div>
       </div>
-      
-      <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7 justify-center`}>
-        {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 
 export default SectionWrapper(Feedbacks, "");
+

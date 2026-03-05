@@ -39,6 +39,8 @@ import trip from "./trip.png"
 import diglib from "./diglib.png"
 import swasth from "./swasth.png"
 import careerprep from "./careerprep.png"
+import endorse from "./endorse.png"
+import ritualo from "./ritualo.png"
 
 export {
   anant,
@@ -79,4 +81,6 @@ export {
   diglib,
   swasth,
   careerprep,
+  endorse,
+  ritualo
 };

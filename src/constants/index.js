@@ -15,6 +15,7 @@ import {
   git,
   figma,
   docker,
+  next,
   meta,
   starbucks,
   tesla,
@@ -28,11 +29,12 @@ import {
   tech,
   anant,
   riyans,
-  next,
   trip,
   diglib,
   swasth,
   careerprep,
+  endorse,
+  ritualo
 } from "../assets";
 
 export const navLinks = [
@@ -49,7 +51,7 @@ export const navLinks = [
     title: "Contact",
   },
   {
-    id:"https://drive.google.com/file/d/1gtpiOK7O7mT274XVv5xiuPYCkGwlItTa/view?usp=drive_link",
+    id:"https://drive.google.com/file/d/1MtTnfwIZWi1rsmbi-Q56pN4v_Ws1Lbke/view?usp=drive_link",
     title:"Resume",
   }
 ];
@@ -127,6 +129,34 @@ const technologies = [
   {
     name: "next js",
     icon: next,
+  },
+  {
+    name: "Docker",
+    icon: docker,
+  },
+  {
+    name: "React Native",
+    icon: "https://reactnative.dev/img/header_logo.svg",
+  },
+  {
+    name: "Python",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  {
+    name: "GenAI / LLM",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+  },
+  {
+    name: "Express.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    name: "C++",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
   },
 ];
 
@@ -260,6 +290,76 @@ const testimonials = [
 ];
 
 const projects = [
+   {
+    name: "Ritualo",
+    description:
+      "Ritualo is an online platform that provides puja services, ritual products, and spiritual guidance in one place. Users can book verified pandits, access authentic puja procedures, and purchase ritual items online, making traditional religious practices more accessible, organized, and convenient for modern users.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name:"mongodb",
+        color:"pink-text-gradient"
+      },
+
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      },
+      {
+        name: "nodejs",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "express",
+        color: "green-text-gradient",
+      },
+      {
+        name: "RAG",
+        color: "green-text-gradient",
+      },
+      {
+        name: "AI",
+        color: "green-text-gradient",
+      },
+      
+    ],
+    image: ritualo,
+    source_code_link: "https://ritualo.shop/",
+  },
+  {
+    name: "Endorse Pro",
+    description:
+      "EndorsePro is a professional credibility platform that enables individuals to validate and showcase their skills through expert endorsements. The platform connects professionals with verified industry experts who assess their capabilities through a transparent review process and provide trusted validation.The platform focuses on trust, transparency, and privacy, ensuring fair expert reviews while maintaining secure user data. By bridging the gap between professionals and expert validators, EndorsePro helps individuals build credibility, strengthen their professional reputation, and accelerate career growth.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name:"mongodb",
+        color:"pink-text-gradient"
+      },
+
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      },
+      {
+        name: "nodejs",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "express",
+        color: "green-text-gradient",
+      },
+      
+    ],
+    image: endorse,
+    source_code_link: "https://dev.endorsepro.co",
+  },
   {
     name: "Career-PrepAI",
     description:
@@ -388,27 +488,7 @@ const projects = [
     image: swasth,
     source_code_link: "https://swasthmitra.com/",
   },
-  {
-    name: "Kart-IT",
-    description:
-      "Dynamic E-Commerce Platform developed using React and Appwrite for seamless online shopping experiences. Features include product catalog management, secure user authentication, shopping cart functionality, order processing, and payment integration. Built with responsive design principles and modern web technologies to provide a user-friendly, secure, and scalable online marketplace for diverse product categories and customer needs.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Appwrite",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/Vishesh-Tripathi/E-Com",
-  },
+  
   {
     name: "Task-Manager",
     description:
