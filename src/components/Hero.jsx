@@ -23,19 +23,19 @@ const InstagramIcon = () => (
 );
 
 const socialLinks = [
-  { icon: <GitHubIcon />, href: 'https://github.com/', label: 'GitHub' },
-  { icon: <LinkedInIcon />, href: 'https://linkedin.com/', label: 'LinkedIn' },
-  { icon: <InstagramIcon />, href: 'https://instagram.com/', label: 'Instagram' },
+  { icon: <GitHubIcon />, href: 'https://github.com/Vishesh-Tripathi', label: 'GitHub' },
+  { icon: <LinkedInIcon />, href: 'https://www.linkedin.com/in/vishesh-tripathi-5a79a6244/', label: 'LinkedIn' },
+  { icon: <InstagramIcon />, href: 'https://instagram.com/_visheshtripathi_', label: 'Instagram' },
 ];
 
 const Hero = () => {
   return (
     <section className="relative w-full min-h-screen flex items-center bg-primary">
-      <div className="max-w-7xl mx-auto px-6 sm:px-16 w-full flex flex-col-reverse md:flex-row items-center justify-between gap-40 py-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-16 w-full flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-16 lg:gap-40 pt-28 pb-20 md:py-20">
 
         {/* Left Content */}
         <div className="flex-1 flex flex-col gap-6 max-w-xl">
-          <h1 className="font-black whitespace-nowrap text-white text-[48px] sm:text-[60px] lg:text-[72px] leading-tight">
+          <h1 className="font-black text-white text-[36px] sm:text-[52px] lg:text-[72px] leading-tight">
             Vishesh Tripathi
           </h1>
 
@@ -111,7 +111,7 @@ const Hero = () => {
 
         {/* Right — Profile Photo */}
         <div className="flex-1 flex items-center justify-center">
-          <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[400px] lg:h-[400px]">
+          <div className="relative w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] md:w-[340px] md:h-[340px] lg:w-[400px] lg:h-[400px]">
             {/* Static faint border */}
             <div className="absolute inset-0 rounded-full border border-[#915EFF33]" />
 

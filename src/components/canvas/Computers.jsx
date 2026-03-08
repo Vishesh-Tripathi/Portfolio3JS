@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
-import { isWebGLAvailable } from "../../utils/webgl";
 import CanvasErrorBoundary from "../CanvasErrorBoundary";
 
 const Computers = ({ isMobile }) => {
@@ -58,8 +57,6 @@ const ComputersCanvas = () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
-
-  if (!isWebGLAvailable()) return null;
 
   return (
     // we wrap in canvas to see model

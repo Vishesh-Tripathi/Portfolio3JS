@@ -20,10 +20,9 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.15, 0.6)}
-      className="group relative bg-[#1d1836] rounded-2xl overflow-hidden border border-[#915EFF]/20 hover:border-[#915EFF]/50 transition-all duration-500 shadow-lg hover:shadow-[#915EFF]/20 hover:shadow-xl"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ width: "360px" }}
+      className="group relative bg-[#1d1836] rounded-2xl overflow-hidden border border-[#915EFF]/20 hover:border-[#915EFF]/50 transition-all duration-500 shadow-lg hover:shadow-[#915EFF]/20 hover:shadow-xl w-full sm:w-[360px]"
       whileHover={{ y: -6 }}
     >
       {/* Top gradient accent */}
@@ -123,7 +122,7 @@ const Works = () => {
         <div className="absolute -top-10 left-0 w-40 h-40 bg-[#915EFF]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-10 right-0 w-40 h-40 bg-[#00cea8]/5 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="flex flex-wrap justify-center gap-7 relative z-10">
+        <div className="flex flex-wrap justify-center gap-7 relative z-10 px-4 sm:px-0">
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}
