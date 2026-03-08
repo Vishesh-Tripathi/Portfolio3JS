@@ -20,6 +20,9 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.15, 0.6)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.1 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="group relative bg-[#1d1836] rounded-2xl overflow-hidden border border-[#915EFF]/20 hover:border-[#915EFF]/50 transition-all duration-500 shadow-lg hover:shadow-[#915EFF]/20 hover:shadow-xl w-full sm:w-[360px]"
