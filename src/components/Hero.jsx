@@ -35,7 +35,7 @@ const Hero = () => {
 
         {/* Left Content */}
         <div className="flex-1 flex flex-col gap-6 max-w-xl">
-          <h1 className="font-black text-white text-[36px] sm:text-[52px] lg:text-[72px] leading-tight">
+          <h1 className="font-black whitespace-nowrap text-white text-[36px] sm:text-[52px] lg:text-[72px] leading-tight">
             Vishesh Tripathi
           </h1>
 
@@ -140,7 +140,7 @@ const Hero = () => {
             />
 
             {/* Photo circle */}
-            <div className="absolute inset-[12px] rounded-full overflow-hidden ">
+            <div className="absolute  inset-[12px] rounded-full overflow-hidden ">
               {self ? (
                 <img
                   src={self}
