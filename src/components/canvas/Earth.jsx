@@ -3,6 +3,8 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
+import { isWebGLAvailable } from "../../utils/webgl";
+import CanvasErrorBoundary from "../CanvasErrorBoundary";
 
 const Earth = () => {
   const earth = useGLTF("./planet/scene.gltf");
@@ -13,31 +15,47 @@ const Earth = () => {
 };
 
 const EarthCanvas = () => {
-  return (
-    <Canvas
-      shadows
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-      camera={{
-        fov: 45,
-        near: 0.1,
-        far: 200,
-        position: [-4, 3, 6],
-      }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          autoRotate
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Earth />
+  if (!isWebGLAvailable()) {
+    return (
+      <div className='w-full h-full flex items-center justify-center'>
+        <div className='w-48 h-48 rounded-full bg-gradient-to-br from-[#00cea8] to-[#915EFF] opacity-60 blur-2xl' />
+      </div>
+    );
+  }
 
-        <Preload all />
-      </Suspense>
-    </Canvas>
+  return (
+    <CanvasErrorBoundary
+      fallback={
+        <div className='w-full h-full flex items-center justify-center'>
+          <div className='w-48 h-48 rounded-full bg-gradient-to-br from-[#00cea8] to-[#915EFF] opacity-60 blur-2xl' />
+        </div>
+      }
+    >
+      <Canvas
+        shadows
+        frameloop='demand'
+        dpr={[1, 2]}
+        gl={{ preserveDrawingBuffer: true }}
+        camera={{
+          fov: 45,
+          near: 0.1,
+          far: 200,
+          position: [-4, 3, 6],
+        }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            autoRotate
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Earth />
+
+          <Preload all />
+        </Suspense>
+      </Canvas>
+    </CanvasErrorBoundary>
   );
 };
 
